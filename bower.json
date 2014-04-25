@@ -1,6 +1,6 @@
 {
   "name": "core",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Core JavaScript library, used with all apps.",
   "main": "js/app.js",
   "private": true,
