@@ -1,0 +1,18 @@
+{
+  "name": "core",
+  "version": "0.1.0",
+  "description": "Core JavaScript library, used with all apps.",
+  "main": "js/app.js",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.0",
+    "underscore": "~1.6.0",
+    "requirejs": "~2.1.11"
+  }
+}
