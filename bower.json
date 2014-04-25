@@ -11,9 +11,9 @@
     "test"
   ],
   "dependencies": {
-    "jquery": "~2.1.0",
-    "underscore": "~1.6.0",
-    "requirejs": "~2.1.11"
+    "jquery": "*",
+    "underscore": "*",
+    "requirejs": "*"
   },
   "devDependencies": {
     "mocha": "~1.18.2",
