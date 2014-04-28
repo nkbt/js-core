@@ -1,31 +1,31 @@
 {
-  "name": "core",
-  "version": "0.3.0",
-  "description": "Core JavaScript library, used with all apps.",
-  "main": [
-    "js/entity/abstract.js",
-    "js/entity/route.js",
-    "js/app.js",
-    "js/dispatcher.js",
-    "js/layout.js",
-    "js/router.js"
-  ],
-  "private": true,
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test"
-  ],
-  "dependencies": {
-    "jquery": "*",
-    "underscore": "*",
-    "requirejs": "*",
-    "async": "~0.7.0",
-    "history": "~1.8.0"
-  },
-  "devDependencies": {
-    "mocha": "~1.18.2",
-    "chai": "~1.9.1"
-  }
+	"name": "core",
+	"version": "0.4.0",
+	"description": "Core JavaScript library, used with all apps.",
+	"main": [
+		"js/entity/abstract.js",
+		"js/entity/route.js",
+		"js/app.js",
+		"js/dispatcher.js",
+		"js/layout.js",
+		"js/router.js"
+	],
+	"private": true,
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"test"
+	],
+	"dependencies": {
+		"jquery": "*",
+		"underscore": "*",
+		"requirejs": "*",
+		"async": "*",
+		"history": "~1.8.0"
+	},
+	"devDependencies": {
+		"mocha": "~1.18.2",
+		"chai": "~1.9.1"
+	}
 }
