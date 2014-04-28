@@ -18,8 +18,7 @@ define([
 
 		return require(['txt!templates/' + templateName + '.html'], function (content) {
 			var $content = $($.parseHTML(content.trim()));
-			$element.html($content);
-			app.trigger($content, 'lib/layout:changed');
+			html($element, $content);
 			return _.isFunction(callback) && callback(null, $content);
 		});
 	}
@@ -37,8 +36,7 @@ define([
 
 	function renderBlock(blockName, content, callback) {
 		var $content = _.isString(content) ? $($.parseHTML(content.trim())) : $(content);
-		app.$root.find('.lib_layout[data-lib_layout-block="' + blockName + '"]').html($content);
-		app.trigger($content, 'lib/layout:changed', [blockName]);
+		html(app.$root.find('.lib_layout[data-lib_layout-block="' + blockName + '"]'), $content);
 		return _.isFunction(callback) && callback(null, $content);
 	}
 
@@ -57,6 +55,20 @@ define([
 		return render($context);
 	}
 
+	function html(element, contents) {
+		// set the HTML, then trigger the changed event on the new children element(s)
+		$(element).html(contents).children().trigger('lib/layout:changed');
+	}
+
+	function append(parent, child) {
+		// append the child to the parent, and trigger the changed event on the new child
+		$(child).appendTo(parent).trigger('lib/layout:changed');
+	}
+
+	function prepend(parent, child) {
+		// prepend the child to the parent, and trigger the changed event on the new child
+		$(child).prependTo(parent).trigger('lib/layout:changed');
+	}
 
 	app
 		.on('lib/layout:changed', null, onChanged)
@@ -66,7 +78,10 @@ define([
 	return {
 		render: render,
 		renderBlock: renderBlock,
-		contentRenderer: contentRenderer
+		contentRenderer: contentRenderer,
+		html: html,
+		append: append,
+		prepend: prepend
 	};
 
 });
