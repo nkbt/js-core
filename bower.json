@@ -8,7 +8,8 @@
 		"js/app.js",
 		"js/dispatcher.js",
 		"js/layout.js",
-		"js/router.js"
+		"js/router.js",
+		"js/navigation.js"
 	],
 	"private": true,
 	"ignore": [
