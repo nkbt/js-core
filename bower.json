@@ -18,10 +18,10 @@
 		"test"
 	],
 	"dependencies": {
-		"jquery": "*",
-		"underscore": "*",
-		"requirejs": "*",
-		"async": "*",
+		"async": "~0.8.0",
+		"jquery": "~2.1.0",
+		"underscore": "~1.6.0",
+		"requirejs": "~2.1.11",
 		"history": "~1.8.0"
 	},
 	"devDependencies": {
