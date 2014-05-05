@@ -1,6 +1,6 @@
 {
 	"name": "core",
-	"version": "0.6.1",
+	"version": "0.6.2",
 	"description": "Core JavaScript library, used with all apps.",
 	"author": {
 		"name": "Nik Butenko",
@@ -26,7 +26,6 @@
 		"test"
 	],
 	"dependencies": {
-		"messenger": "nkbt/messenger",
 		"jquery": "~2.1.0",
 		"underscore": "~1.6.0",
 		"requirejs": "~2.1.11",
