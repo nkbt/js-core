@@ -1,50 +1,53 @@
-"use strict";
+(function () {
+	"use strict";
 
-require.config({
-	baseUrl: '../js',
-	paths: {
-		underscore: '../bower_components/underscore/underscore',
-		dom: '../bower_components/jquery/dist/jquery',
-		
-		test: '../test',
-		mocha: '../bower_components/mocha/mocha',
-		chai: '../bower_components/chai/chai'
-	},
-	shim: {
-		underscore: {
-			exports: '_'
+	require.config({
+		baseUrl: '../js',
+		paths: {
+			underscore: '../bower/underscore/underscore',
+			dom: '../bower/jquery/dist/jquery',
+
+			test: '../test',
+			mocha: '../bower/mocha/mocha',
+			chai: '../bower/chai/chai'
 		},
-		dom: {
-			exports: 'jQuery'
+		shim: {
+			underscore: {
+				exports: '_'
+			},
+			dom: {
+				exports: 'jQuery'
+			},
+			mocha: {
+				exports: 'mocha'
+			},
+			chai: {
+				exports: 'chai'
+			}
 		},
-		mocha: {
-			exports: 'mocha'
-		},
-		chai: {
-			exports: 'chai'
-		}
-	}
-});
-
-// load tests
-require([
-	'mocha', 'chai'
-], function (mocha, chai) {
-	// start the test runner
-	mocha.ui('bdd');
-
-	window.expect = chai.expect;
-
-	// load up the tests
-	require([
-		'test/lib/app'
-
-		// add more here...
-	], function () {
-		if (window.mochaPhantomJS) {
-			mochaPhantomJS.run();
-		} else {
-			mocha.run();
+		map: {
+			'*': {
+				'css': '../bower/require-css/css',
+				'txt': '../bower/requirejs-text/text'
+			}
 		}
 	});
-});
+
+	require([
+		'mocha', 'chai'
+	], function (mocha, chai) {
+		mocha.ui('bdd');
+		window.expect = chai.expect;
+		require([
+			'test/lib/app'
+		], function () {
+			if (window.mochaPhantomJS) {
+				mochaPhantomJS.run();
+			} else {
+				mocha.run();
+			}
+		});
+	});
+
+
+})();

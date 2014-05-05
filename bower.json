@@ -2,6 +2,10 @@
 	"name": "core",
 	"version": "0.6.1",
 	"description": "Core JavaScript library, used with all apps.",
+	"author": {
+		"name": "Nik Butenko",
+		"email": "nik@butenko.me"
+	},
 	"main": [
 		"js/entity/abstract.js",
 		"js/entity/from-json.js",
@@ -18,19 +22,17 @@
 	"ignore": [
 		"**/.*",
 		"node_modules",
-		"bower_components",
+		"bower",
 		"test"
 	],
 	"dependencies": {
 		"messenger": "nkbt/messenger",
-		"async": "~0.8.0",
 		"jquery": "~2.1.0",
 		"underscore": "~1.6.0",
-		"requirejs": "~2.1.11",
-		"history": "~1.8.0"
+		"requirejs": "~2.1.11"
 	},
 	"devDependencies": {
-		"mocha": "~1.18.2",
-		"chai": "~1.9.1"
+		"chai": "~1.9.1",
+		"mocha": "~1.18.2"
 	}
 }
