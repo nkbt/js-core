@@ -1,3 +1,4 @@
+/*global console: false */
 define([
 	'module', 'dom', 'underscore'
 ], function (module, $, _) {

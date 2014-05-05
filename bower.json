@@ -29,7 +29,8 @@
 		"messenger": "nkbt/messenger",
 		"jquery": "~2.1.0",
 		"underscore": "~1.6.0",
-		"requirejs": "~2.1.11"
+		"requirejs": "~2.1.11",
+		"requirejs-text": "~2.0.12"
 	},
 	"devDependencies": {
 		"chai": "~1.9.1",

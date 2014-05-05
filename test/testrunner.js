@@ -7,6 +7,8 @@
 			underscore: '../bower/underscore/underscore',
 			dom: '../bower/jquery/dist/jquery',
 
+			'lib/app': 'app',
+
 			test: '../test',
 			mocha: '../bower/mocha/mocha',
 			chai: '../bower/chai/chai'

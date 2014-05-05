@@ -1,4 +1,4 @@
-define(['app'], function (app) {
+define(['lib/app'], function (app) {
 	"use strict";
 
 	describe('app', function () {

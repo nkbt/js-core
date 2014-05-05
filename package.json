@@ -1,7 +1,7 @@
 {
-	"name": "bower-template",
-	"version": "0.0.1",
-	"description": "bower-template",
+	"name": "core",
+	"version": "0.6.1",
+	"description": "Core JavaScript library, used with all apps.",
 	"private": true,
 	"author": {
 		"name": "Nik Butenko",

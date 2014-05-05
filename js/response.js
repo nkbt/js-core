@@ -1,3 +1,4 @@
+/*global console: false */
 define([
 	'underscore', 'lib/app', 'lib/messenger', 'entity/from-json'
 ], function (_, app, messenger, fromJson) {
