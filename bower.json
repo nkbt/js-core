@@ -1,15 +1,18 @@
 {
 	"name": "core",
-	"version": "0.5.1",
+	"version": "0.6.1",
 	"description": "Core JavaScript library, used with all apps.",
 	"main": [
 		"js/entity/abstract.js",
+		"js/entity/from-json.js",
 		"js/entity/route.js",
 		"js/app.js",
 		"js/dispatcher.js",
 		"js/layout.js",
-		"js/router.js",
-		"js/navigation.js"
+		"js/navigation.js",
+		"js/request.js",
+		"js/response.js",
+		"js/router.js"
 	],
 	"private": true,
 	"ignore": [
@@ -19,6 +22,7 @@
 		"test"
 	],
 	"dependencies": {
+		"messenger": "nkbt/messenger",
 		"async": "~0.8.0",
 		"jquery": "~2.1.0",
 		"underscore": "~1.6.0",
