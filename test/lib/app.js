@@ -1,4 +1,4 @@
-define(['lib/app'], function (app) {
+define(['lib/app', 'dom'], function (app, $) {
 	"use strict";
 
 	describe('app', function () {
@@ -14,6 +14,28 @@ define(['lib/app'], function (app) {
 				});
 
 				app.trigger('custom:event');
+
+			});
+
+		});
+
+		describe('fill', function () {
+
+			it('should trigger change event when filling value', function (done) {
+
+				var $element = $('<div/>').appendTo('body'),
+					$input = $('<input data-fill_me-text="value">').appendTo($element);
+
+				$input.on('change', function (event) {
+					expect(event).to.be.an.object;
+					expect(event.target.value).to.equal('hello');
+
+					done();
+				});
+
+				app.fill($element, 'data-fill_me', {
+					text: 'hello'
+				});
 
 			});
 

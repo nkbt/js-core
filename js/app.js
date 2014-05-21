@@ -19,7 +19,7 @@ define([
 					if (targetAttr === 'value' && $item.is('[type=radio]')) {
 						$item.prop('checked', ($item.val() === value));
 					} else if (targetAttr === 'value' && _.isFunction($item.val)) {
-						$item.val(value);
+						$item.val(value).trigger('change');
 					} else if (targetAttr === 'html') {
 						$item.html(value);
 					} else {
