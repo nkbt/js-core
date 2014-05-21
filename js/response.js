@@ -10,7 +10,7 @@ define([
 				if (messageEntity.isError()) {
 					console.warn(messageEntity.text(), messageEntity.trace().split('\n'));
 				}
-				app.trigger('lib/messenger:show', [type, messageEntity.text()]);
+				app.trigger('messenger:show', [type, messageEntity.text()]);
 				return result === null && messageEntity.isError() && messageEntity.text() || null;
 			}, null),
 			error = errorMessage && new Error(errorMessage) || null,
@@ -53,7 +53,7 @@ define([
 	}
 
 	function veryBadErrorHandler(error, callback) {
-		app.trigger('lib/messenger:show', [messenger.TYPE_ERROR, error.message]);
+		app.trigger('messenger:show', [messenger.TYPE_ERROR, error.message]);
 		return callback(error);
 	}
 
