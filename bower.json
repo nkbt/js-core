@@ -1,37 +1,37 @@
 {
 	"name": "core",
-	"version": "0.6.6",
+	"version": "0.6.7",
 	"description": "Core JavaScript library, used with all apps.",
 	"author": {
 		"name": "Nik Butenko",
 		"email": "nik@butenko.me"
 	},
 	"main": [
-    "js/entity/abstract.js",
-    "js/entity/from-json.js",
-    "js/entity/route.js",
-    "js/app.js",
-    "js/dispatcher.js",
-    "js/layout.js",
-    "js/navigation.js",
-    "js/request.js",
-    "js/response.js",
-    "js/router.js"
-  ],
+		"js/entity/abstract.js",
+		"js/entity/from-json.js",
+		"js/entity/route.js",
+		"js/app.js",
+		"js/dispatcher.js",
+		"js/layout.js",
+		"js/navigation.js",
+		"js/request.js",
+		"js/response.js",
+		"js/router.js"
+	],
 	"private": true,
 	"ignore": [
-    "**/.*",
-    "node_modules",
-    "bower",
-    "test"
-  ],
+		"**/.*",
+		"node_modules",
+		"bower",
+		"test"
+	],
 	"dependencies": {
-		"jquery": "~2.1.0",
-		"underscore": "~1.6.0",
-		"history": "~1.8.0",
-		"requirejs": "~2.1.11",
-		"requirejs-text": "~2.0.12",
-		"async": "~0.9.0"
+		"jquery": ">=1.7.0",
+		"underscore": "*",
+		"history": "*",
+		"requirejs": "*",
+		"requirejs-text": "*",
+		"async": "*"
 	},
 	"devDependencies": {
 		"chai": "~1.9.1",
