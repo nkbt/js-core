@@ -1,6 +1,5 @@
 {
 	"name": "core",
-	"version": "0.6.7",
 	"description": "Core JavaScript library, used with all apps.",
 	"author": {
 		"name": "Nik Butenko",
