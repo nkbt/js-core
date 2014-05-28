@@ -1,6 +1,5 @@
 {
 	"name": "core",
-	"version": "0.6.8",
 	"description": "Core JavaScript library, used with all apps.",
 	"private": true,
 	"author": {
@@ -16,10 +15,6 @@
 	"scripts": {
 		"test": "grunt test",
 		"build": "grunt"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git@github.com:nkbt/bower-template.git"
 	},
 	"dependencies": {},
 	"devDependencies": {

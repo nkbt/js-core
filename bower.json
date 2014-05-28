@@ -1,6 +1,5 @@
 {
 	"name": "core",
-	"version": "0.6.8",
 	"description": "Core JavaScript library, used with all apps.",
 	"author": {
 		"name": "Nik Butenko",
@@ -25,6 +24,10 @@
 		"bower",
 		"test"
 	],
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/nkbt/js-core.git"
+	},
 	"dependencies": {
 		"jquery": ">=1.7.0",
 		"underscore": "*",
