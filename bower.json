@@ -1,5 +1,6 @@
 {
 	"name": "core",
+	"version": "0.6.8",
 	"description": "Core JavaScript library, used with all apps.",
 	"author": {
 		"name": "Nik Butenko",
@@ -33,7 +34,7 @@
 		"async": "*"
 	},
 	"devDependencies": {
-		"chai": "~1.9.1",
-		"mocha": "~1.18.2"
+		"chai": "*",
+		"mocha": "*"
 	}
 }
