@@ -100,6 +100,16 @@ define([
 	}
 
 
+	function asyncDomReady(callback) {
+		var _this = this;
+		return domReady(function() {
+			var args = _.toArray(arguments);
+			args.unshift(null);
+			return callback.apply(_this, args);
+		});
+	}
+
+
 	function getElement(event, selector) {
 		return $(event.target).closest(selector);
 	}
@@ -121,6 +131,7 @@ define([
 		trigger: trigger,
 
 		ready: domReady,
+		asyncReady: asyncDomReady,
 		getElement: getElement,
 		getRoot: getRoot,
 

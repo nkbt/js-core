@@ -13,13 +13,14 @@ define([
 
 	/**
 	 * @param {RouteEntity} route
+	 * @param {Function?} callback
 	 * @returns {*}
 	 */
-	function run(route) {
+	function run(route, callback) {
 		var newUrl = router.routeToUrl(route),
 			controllerModule;
 		if (newUrl === currentUrl) {
-			return null;
+			return callback && callback(null);
 		}
 		currentUrl = newUrl;
 		app.log("run", [JSON.stringify(route)]);
@@ -27,15 +28,18 @@ define([
 		controllerModule = [config.basePath, route.controller()].join('/');
 
 		if (require.defined(controllerModule)) {
-			return app.trigger('lib/dispatcher:run', [route]);
+			app.trigger('lib/dispatcher:run', [route]);
+			return callback && callback(null);
 		} else {
 			return require([
 					controllerModule
 				], function () {
-					return app.trigger('lib/dispatcher:run', [route]);
+					app.trigger('lib/dispatcher:run', [route]);
+					return callback && callback(null);
 				}, function (error) {
 					app.log('404', [controllerModule, error.message]);
 					app.trigger('lib/dispatcher:404', [route]);
+					return callback && callback(null);
 				}
 			);
 		}
@@ -44,13 +48,14 @@ define([
 
 	/**
 	 * @param {String} url
+	 * @param {Function?} callback
 	 * @returns {*}
 	 */
-	function dispatch(url) {
+	function dispatch(url, callback) {
 		var route = router.urlToRoute(url),
 			path = ['/', router.routeToUrl(route)].join('');
 		history.pushState(route.get(), "", path);
-		return run(route);
+		return run(route, callback);
 	}
 
 
@@ -77,16 +82,16 @@ define([
 	/**
 	 * Restoring current page
 	 */
-	function restoreState() {
-		return dispatch(document.location.href);
+	function restoreState(callback) {
+		return dispatch(document.location.href, callback);
 	}
 
 
 	/**
 	 * "Reload" current page
 	 */
-	function reload() {
-		return dispatch(document.location.href);
+	function reload(callback) {
+		return dispatch(document.location.href, callback);
 	}
 
 
