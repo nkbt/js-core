@@ -1,6 +1,6 @@
 define([
-	'module', 'dom', 'underscore', 'history', 'lib/app', 'lib/router', 'lib/layout', 'entity/route'
-], function (module, $, _, history, app, router, layout, RouteEntity) {
+	'module', 'underscore', 'history', 'lib/app', 'lib/router', 'entity/route'
+], function (module, _, history, app, router, RouteEntity) {
 	"use strict";
 	app.log('Loaded');
 
@@ -75,9 +75,10 @@ define([
 	 */
 	function onClick(event) {
 		event.preventDefault();
-		var $link = $(event.target).closest('.lib_dispatcher-link');
+		var $link = app.getElement(event, '.lib_dispatcher-link');
 		return dispatch($link.attr('href'));
 	}
+
 
 	/**
 	 * Restoring current page
