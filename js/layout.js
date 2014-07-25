@@ -48,31 +48,55 @@ define([
 	}
 
 
-	function onChanged(event) {
-		var $context = $(event.target);
-		triggerRenderingDone($context);
-		app.log('Layout Changed', [$context.get(0)]);
-		return render($context);
+	function change($element) {
+		app.log('Layout Changed', [$element.get(0)]);
+		$element.trigger('lib/layout:changed');
+		triggerRenderingDone($element);
+		return render($element);
 	}
 
+
+	/**
+	 * Set the HTML, then trigger the changed event on the new children element(s)
+	 * @param element
+	 * @param contents
+	 */
 	function html(element, contents) {
-		// set the HTML, then trigger the changed event on the new children element(s)
-		$(element).html(contents).children().trigger('lib/layout:changed');
+
+		var $element = $(element).html(contents),
+			$children = $element.children();
+
+		return _.each($children, function (child) {
+			var $child = $(child);
+			return change($child);
+		});
 	}
 
+	/**
+	 * Append the child to the parent, and trigger the changed event on the new child
+	 * @param parent
+	 * @param child
+	 */
 	function append(parent, child) {
-		// append the child to the parent, and trigger the changed event on the new child
-		$(child).appendTo(parent).trigger('lib/layout:changed');
+
+		var $child = $(child);
+		$child.appendTo(parent);
+
+		return change($child);
 	}
 
+	/**
+	 * Prepend the child to the parent, and trigger the changed event on the new child
+	 * @param parent
+	 * @param child
+	 */
 	function prepend(parent, child) {
-		// prepend the child to the parent, and trigger the changed event on the new child
-		$(child).prependTo(parent).trigger('lib/layout:changed');
-	}
 
-	app
-		.on('lib/layout:changed', null, onChanged)
-	;
+		var $child = $(child);
+		$child.prependTo(parent);
+
+		return change($child);
+	}
 
 
 	return {
