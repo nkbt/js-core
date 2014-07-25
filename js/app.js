@@ -101,11 +101,10 @@ define([
 
 
 	function asyncDomReady(callback) {
-		var _this = this;
-		return domReady(function() {
+		return domReady(function () {
 			var args = _.toArray(arguments);
 			args.unshift(null);
-			return callback.apply(_this, args);
+			return callback.apply(null, args);
 		});
 	}
 
